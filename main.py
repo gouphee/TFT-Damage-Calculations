@@ -101,8 +101,8 @@ def surface_plot():
 
 
 def main():
-    # resistance_graph()
-    # hp_graph()
+    resistance_graph()
+    hp_graph()
     surface_plot()
     
 
