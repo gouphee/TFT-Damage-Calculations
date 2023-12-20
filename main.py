@@ -17,6 +17,11 @@ def damage_calculation(hp, armor, mr):
     steadfastMag1 = (hp + 250)  * (100+mr)/100 * (1/.85)
     steadfastMag2 =  (hp + 250)  * (100+mr)/100 * (1/.92)
 
+    # # average when you just average the two DR values
+    # steadfastPhy = 2*(steadfastPhy1*steadfastPhy2) / (steadfastPhy1 + steadfastPhy2)
+    # steadfastMag = 2*(steadfastMag1*steadfastMag2) / (steadfastMag1 + steadfastMag2)
+
+    # average when you split the hp pool
     steadfastPhy = (steadfastPhy1 + steadfastPhy2) / 2
     steadfastMag = (steadfastMag1 + steadfastMag2) / 2
 
@@ -106,9 +111,13 @@ def surface_plot():
 
 
 def main():
-    resistance_graph()
-    hp_graph()
-    surface_plot()
+    # resistance_graph()
+    # hp_graph()
+    # surface_plot()
+
+    base = damage_calculation(100, 0, 0)
+
+    print(base)
     
 
 
