@@ -12,8 +12,13 @@ def damage_calculation(hp, armor, mr):
 
     warmog = (hp + 600)*1.08 * ((100+mr)/100)
 
-    steadfastPhy = ((hp + 250) / 2)  * (100+armor+20)/100 * (1/.85) + ((hp + 250) / 2)  * (100+armor+20)/100 * (1/.92)
-    steadfastMag = ((hp + 250) / 2)  * (100+mr)/100 * (1/.85) + ((hp + 250) / 2)  * (100+mr)/100 * (1/.92)
+    steadfastPhy1 = (hp + 250) * (100+armor+20)/100 * (1/.85)
+    steadfastPhy2 =  (hp + 250)  * (100+armor+20)/100 * (1/.92)
+    steadfastMag1 = (hp + 250)  * (100+mr)/100 * (1/.85)
+    steadfastMag2 =  (hp + 250)  * (100+mr)/100 * (1/.92)
+
+    steadfastPhy = (steadfastPhy1 + steadfastPhy2) / 2
+    steadfastMag = (steadfastMag1 + steadfastMag2) / 2
 
     return [warmog, steadfastPhy, steadfastMag]
 
